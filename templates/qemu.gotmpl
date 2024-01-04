@@ -1,0 +1,30 @@
+{{block "qemu"}}
+#
+# user:passwd
+# <>:<>
+#
+
+LOC=$(realpath $0 | rev | cut -d'/' --complement -f1 | rev)"
+
+# cdrom
+qemu-system-x86_64 -m 4G -enable-kvm -cpu host \
+		   -smp 4 -machine pc,accel=kvm \
+		   -drive file=${LOC}/{{ .Image }} \
+		   -display sdl,gl=on \
+		   -boot d \
+		   -cdrom {{ .ISO }}
+
+# performance
+qemu-system-x86_64 -m 4G -enable-kvm -cpu host \
+		   -smp 4 -machine pc,accel=kvm \
+		   -drive file=${LOC}/{{ .Image }} \
+		   -display sdl,gl=on \
+		   -boot menu-off
+
+# networking
+
+
+# isolate
+
+
+{{end}}
