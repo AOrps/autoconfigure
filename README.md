@@ -1,5 +1,5 @@
-# Repo-Name
-- Description
+# autoconfigure
+- template files
 
 ## :mag: Manual
 
@@ -8,9 +8,23 @@
 ```
 
 ## :hammer: How to Build
+```
+cd autoconfigure/
+cargo build
+```
 
 ## :alembic: Usage
+### After `build`
+```
+./target/debug/autoconfigure
+```
+- this command implies that you are already in the `autoconfigure` directory 
 
+### Straight off the rip
+```
+cd autoconfigure
+cargo run
+```
 ---
 
 ## :framed_picture: Screenshots / Images
