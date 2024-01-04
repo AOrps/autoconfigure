@@ -1,0 +1,13 @@
+{{block "afl-fuzz" }}
+OUTDIR=
+CORPUS=
+EXE=
+
+screen -dmS fuzz01 /bin/bash -c "afl-fuzz -i ${CORPUS} -o ${OUTDIR} -M fuzz01 -- ${EXE}"
+{{range . in .I}}
+screen -dmS fuzz{{ . }} /bin/bash -c "afl-fuzz -i ${CORPUS} -o ${OUTDIR} -S fuzz{{ . }} -- ${EXE}"
+{{end}}
+
+# to get into screen, screen -rd <screen_input>, ex: `screen -rd fuzz01
+# to detach again, C-a d
+{{end}}
