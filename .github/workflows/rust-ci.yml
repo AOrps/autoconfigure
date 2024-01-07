@@ -19,9 +19,6 @@ jobs:
       with:
         toolchain: stable
 
-    - name: "Get into autoconfigure cargo area"
-      run: cd autoconfigure 
-
     - name: "Cargo Check"
       run: cargo check
 
