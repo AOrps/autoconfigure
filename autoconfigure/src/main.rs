@@ -13,12 +13,14 @@ struct Args {
     count: u8,
 }
 
+
+
 fn main() {
     let args = Args::parse();
     for _ in 0..args.count {
 	println!("Hello {}!", args.name);
     }
-    
+
 
     let output = gtmpl::template("Finally, some template {{ . }} in rust", "nuts");
     // assert_eq!(&output.unwrap(), "Finally, some template nuts in rust");
