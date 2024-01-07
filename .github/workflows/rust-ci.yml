@@ -1,4 +1,4 @@
-name: Cargo check & Build
+name: Autoconfigure CI
 
 on:
 	push:
